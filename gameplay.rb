@@ -5,9 +5,9 @@ class Gameplay
     @player1 = Players.new('Player 1')
     @player2 = Players.new('Player 2')
   end
-
-  attr_reader :name
   
+  attr_reader :name
+
   # checks the score to determine if someone wins
   def score
     if @player1.dies

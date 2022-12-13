@@ -6,20 +6,20 @@ class Players
   end
 
   attr_reader :name, :life
-  
+  # lose a life
   def lose
     @life -= 1
   end
-
+  # end of life
   def dies
     @life === 0 
   end
-
+  # genterates new question and checks if the response is correct
   def new_question 
     new_question = Questions.new
     new_question.question(name)
     print '> '
-    @answer = $stdin.gets.chomp
+    @answer = gets.chomp
     if new_question.correct?(@answer.to_i)
       puts "YES! You are correct."
     else 
